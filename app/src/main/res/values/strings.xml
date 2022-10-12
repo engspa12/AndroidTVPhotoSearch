@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PhotoSearchAndroidTV</string>
+    <string name="browse_label">Browse</string>
+    <string name="app_title">PHOTO SEARCH</string>
 </resources>
