@@ -1,6 +1,6 @@
 package com.example.dbm.photosearchandroidtv.data.datasource
 
-import com.example.dbm.photosearchandroidtv.data.model.search.FlickrPhotosResponse
+import com.example.dbm.photosearchandroidtv.data.model.FlickrPhotosResponse
 import com.example.dbm.photosearchandroidtv.util.Constants
 import retrofit2.http.GET
 import retrofit2.http.Query

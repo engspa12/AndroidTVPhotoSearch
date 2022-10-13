@@ -5,18 +5,18 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.dbm.photosearchandroidtv.R
-import com.example.dbm.photosearchandroidtv.data.model.search.PhotoItemNetwork
+import com.example.dbm.photosearchandroidtv.data.model.PhotoNetwork
 import java.text.SimpleDateFormat
 import java.util.*
 
 fun ImageView.loadUrl(url: String){
 
     val options = RequestOptions()
-        .centerCrop()
         .placeholder(R.drawable.placeholder_image)
         .error(R.drawable.no_image_available)
         .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-        .override(480, 300)
+        .override(580, 320)
+        .centerCrop()
 
     Glide
         .with(this)
@@ -25,7 +25,7 @@ fun ImageView.loadUrl(url: String){
         .into(this)
 }
 
-fun PhotoItemNetwork.getImageUrl(): String {
+fun PhotoNetwork.getImageUrl(): String {
     return if(this.urlH != null && this.urlH != ""){
         this.urlH ?: ""
     } else if (this.urlO != null && this.urlO != "") {

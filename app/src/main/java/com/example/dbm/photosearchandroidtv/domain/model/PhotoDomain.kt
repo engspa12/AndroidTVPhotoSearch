@@ -1,6 +1,6 @@
-package com.example.dbm.photosearchandroidtv.presentation.model
+package com.example.dbm.photosearchandroidtv.domain.model
 
-data class PhotoItemView(
+data class PhotoDomain(
     val title: String,
     val date: String,
     val author: String,

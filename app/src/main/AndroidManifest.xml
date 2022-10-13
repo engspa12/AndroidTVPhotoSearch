@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".global.PhotosApplication"
         android:allowBackup="true"
         android:banner="@mipmap/banner_image"
         android:icon="@mipmap/ic_launcher"
@@ -18,14 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PhotoSearchAndroidTV">
         <activity
-            android:name=".presentation.main.SearchActivity"
+            android:name="com.example.dbm.photosearchandroidtv.presentation.view.search.PhotosSearchActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.main.GridActivity"
+            android:name="com.example.dbm.photosearchandroidtv.presentation.view.grid.PhotosGridActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
