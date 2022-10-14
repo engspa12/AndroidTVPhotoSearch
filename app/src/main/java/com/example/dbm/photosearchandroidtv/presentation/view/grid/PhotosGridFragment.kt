@@ -71,7 +71,7 @@ class PhotosGridFragment: VerticalGridSupportFragment() {
                 viewModel.uiState.collect { uiState ->
                     arrayAdapter.addAll(0, uiState.listPhotos)
                     if(uiState.resultListEmpty){
-                        title = getString(uiState.userMessage.userMessageResource, uiState.userMessage.dataForResource)
+                        title = getString(uiState.messageWrapper.messageResource, uiState.messageWrapper.argForResource)
                     }
                 }
             }

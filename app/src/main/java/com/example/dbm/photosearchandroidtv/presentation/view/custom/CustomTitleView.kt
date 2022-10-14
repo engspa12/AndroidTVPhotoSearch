@@ -1,4 +1,4 @@
-package com.example.dbm.photosearchandroidtv.util
+package com.example.dbm.photosearchandroidtv.presentation.view.custom
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -36,23 +36,10 @@ class CustomTitleView(context: Context, attrs: AttributeSet?, defStyle: Int): Re
         override fun setOnSearchClickedListener(listener: OnClickListener?) {
             this@CustomTitleView.setOnSearchClickedListener(listener)
         }
-
-        override fun updateComponentsVisibility(flags: Int) {
-            //super.updateComponentsVisibility(flags)
-        }
-
-        private fun updateBadgeVisibility(visible:Boolean) {
-            if (visible) {
-                mTitleView?.visibility = View.VISIBLE
-            } else {
-                mTitleView?.visibility = View.GONE
-            }
-        }
-
     }
 
     init {
-        val root  = LayoutInflater.from(context).inflate(R.layout.custom_title_view, this)
+        val root  = LayoutInflater.from(context).inflate(R.layout.custom_title_view_distribution, this)
         mTitleView = root.findViewById(R.id.title_tv) as TextView
         mBadgeView = root.findViewById(R.id.badge_iv) as ImageView
         mOrbView = root.findViewById(R.id.search_orb_view) as SearchOrbView

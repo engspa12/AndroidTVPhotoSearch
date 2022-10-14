@@ -6,7 +6,7 @@ import com.example.dbm.photosearchandroidtv.R
 import com.example.dbm.photosearchandroidtv.di.DispatchersModule
 import com.example.dbm.photosearchandroidtv.domain.usecase.IGetPhotosBySearchTermUseCase
 import com.example.dbm.photosearchandroidtv.domain.usecase.IGetPhotosFromFeedUseCase
-import com.example.dbm.photosearchandroidtv.util.UserMessage
+import com.example.dbm.photosearchandroidtv.util.MessageWrapper
 import com.example.dbm.photosearchandroidtv.presentation.state.PhotosUIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -37,14 +37,14 @@ class PhotosViewModel @Inject constructor(
                 val result = getPhotosBySearchTermUseCase(searchTerm = searchTerm)
                 _uiState.update {
                     if(result.isEmpty()){
-                        it.copy(listPhotos = result, resultListEmpty = true, errorPresent = false, userMessage = UserMessage(R.string.no_search_results_for, searchTerm))
+                        it.copy(listPhotos = result, resultListEmpty = true, errorPresent = false, messageWrapper = MessageWrapper(R.string.no_search_results_for, searchTerm))
                     } else {
-                        it.copy(listPhotos = result, resultListEmpty = false, errorPresent = false, userMessage = UserMessage(R.string.search_results_for, searchTerm))
+                        it.copy(listPhotos = result, resultListEmpty = false, errorPresent = false, messageWrapper = MessageWrapper(R.string.search_results_for, searchTerm))
                     }
                 }
             } catch (e: IOException) {
                 _uiState.update {
-                    it.copy(errorPresent = true, userMessage = UserMessage(R.string.error_message))
+                    it.copy(errorPresent = true, messageWrapper = MessageWrapper(R.string.error_message))
                 }
             }
         }
@@ -60,7 +60,7 @@ class PhotosViewModel @Inject constructor(
                 }
             } catch (e: IOException) {
                 _uiState.update {
-                    it.copy(errorPresent = true, userMessage = UserMessage(R.string.error_message))
+                    it.copy(errorPresent = true, messageWrapper = MessageWrapper(R.string.error_message))
                 }
             }
         }

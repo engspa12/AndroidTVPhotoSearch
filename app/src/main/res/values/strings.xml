@@ -5,4 +5,6 @@
     <string name="title_badge">Title Badge</string>
     <string name="search_results_for">Search Results for \"%1$s\"</string>
     <string name="no_search_results_for">No search results for \"%1$s\"</string>
+    <string name="card_background">Card Background</string>
+    <string name="card_text">%1$s\n%2$s / %3$s</string>
 </resources>

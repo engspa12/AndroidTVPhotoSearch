@@ -10,7 +10,7 @@
         <item name="android:colorPrimary">#2822CD</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <item name="browseTitleViewLayout">@layout/title_view_dbm</item>
-        <item name="browseRowsMarginTop">150dp</item>
+        <item name="browseTitleViewLayout">@layout/custom_title_view_declaration</item>
+        <item name="browseRowsMarginTop">160dp</item>
     </style>
 </resources>

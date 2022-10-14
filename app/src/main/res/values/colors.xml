@@ -2,4 +2,5 @@
 <resources>
     <color name="background_orb">#037180</color>
     <color name="white_text">#DDDDDD</color>
+    <color name="main_background">#000000</color>
 </resources>
