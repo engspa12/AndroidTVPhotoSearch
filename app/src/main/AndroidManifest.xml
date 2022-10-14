@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name="com.example.dbm.photosearchandroidtv.presentation.view.grid.PhotosGridActivity"
+            android:theme="@style/Theme.GridPhotosCustomTitle"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

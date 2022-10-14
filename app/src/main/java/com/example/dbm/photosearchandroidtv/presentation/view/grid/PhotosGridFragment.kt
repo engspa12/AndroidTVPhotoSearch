@@ -42,8 +42,8 @@ class PhotosGridFragment: VerticalGridSupportFragment() {
 
         if(activity?.intent?.hasExtra(PhotosSearchFragment.SEARCH_TERM) == true){
             val searchTerm = activity?.intent?.getStringExtra(PhotosSearchFragment.SEARCH_TERM) ?: ""
+            title = getString(R.string.search_results_for, searchTerm)
             searchPhotos(searchTerm)
-            title = searchTerm
         } else {
             loadPhotosFromFeed()
         }
@@ -70,6 +70,9 @@ class PhotosGridFragment: VerticalGridSupportFragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { uiState ->
                     arrayAdapter.addAll(0, uiState.listPhotos)
+                    if(uiState.resultListEmpty){
+                        title = getString(uiState.userMessage.userMessageResource, uiState.userMessage.dataForResource)
+                    }
                 }
             }
         }
